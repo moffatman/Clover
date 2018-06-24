@@ -83,7 +83,6 @@ android {
             buildConfigField "String", "UPDATE_API_ENDPOINT", "\"https://build.floens.org/api/update\""
             buildConfigField "String", "CRASH_REPORT_ENDPOINT", "\"https://acra.floens.org/clover/report\""
         }
-
         dev {
             dimension "default"
             applicationId "org.floens.chan.dev"
@@ -92,10 +91,9 @@ android {
             buildConfigField "String", "BUILD_HASH", "\"$hash\""
             buildConfigField "String", "UPDATE_API_ENDPOINT", "\"https://build.floens.org/api/update_dev\""
             buildConfigField "String", "CRASH_REPORT_ENDPOINT", "\"https://acra.floens.org/clover/report\""
-
             versionNameSuffix "-" + hash
+            targetSdkVersion 27
         }
-
         fdroid {
             dimension "default"
             applicationId "org.floens.chan"
@@ -125,7 +123,6 @@ android {
 
 dependencies {
     def supportVersion = '27.1.0'
-
     implementation "com.android.support:support-v13:${supportVersion}"
     implementation "com.android.support:appcompat-v7:${supportVersion}"
     implementation "com.android.support:recyclerview-v7:${supportVersion}"
@@ -134,7 +131,6 @@ dependencies {
     implementation "com.android.support:design:${supportVersion}"
     implementation "com.android.support:customtabs:${supportVersion}"
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-
     implementation 'com.squareup.okhttp3:okhttp:3.8.0'
     implementation 'com.j256.ormlite:ormlite-core:4.48'
     implementation 'com.j256.ormlite:ormlite-android:4.48'
@@ -146,6 +142,5 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.1'
     implementation 'me.xdrop:fuzzywuzzy:1.1.9'
     implementation 'org.codejargon.feather:feather:1.0'
-
     releaseImplementation 'ch.acra:acra-http:5.0.1'
 }
